@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://snapself-3c339.web.app/.app/sitemap.xml
