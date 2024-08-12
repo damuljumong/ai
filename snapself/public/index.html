@@ -28,250 +28,226 @@
   
       <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
       <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #eef2f7;
-        }
-
-        h1 {
-            text-align: center;
-            color: #2c3e50;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-
-        h2 {
-            text-align: center;
-            color: #34495e;
-            font-size: 1.5em;
-            margin-bottom: 30px;
-        }
-
-        .live-stream-link {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .live-stream-link a {
-            color: #e74c3c;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .live-stream-link a:hover {
-            text-decoration: underline;
-        }
-
-        .upload-container {
-            background-color: #fff;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            margin-bottom: 30px;
-        }
-
-        #dragDropArea {
-            border: 2px dashed #3498db;
-            border-radius: 12px;
-            padding: 40px;
-            text-align: center;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            margin-bottom: 30px;
-            background-color: #f8f9fa;
-        }
-
-        #dragDropArea.dragover {
-            background-color: #e0f7fa;
-        }
-
-        #imagePreviewContainer {
-            position: relative;
-            max-width: 100%;
-            max-height: 300px;
-            margin: 20px auto;
-            display: none;
-            border-radius: 12px;
-            border: 5px solid #3498db;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
-
-        #imagePreview {
-            width: 100%;
-            height: auto;
-            border-radius: 12px;
-        }
-
-        #scanningBar {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: rgba(255, 255, 255, 0.6);
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-            animation: scanning 3s linear infinite;
-            display: none;
-        }
-
-        @keyframes scanning {
-            0% {
-                top: 0;
-            }
-            50% {
-                top: calc(100% - 5px);
-            }
-            100% {
-                top: 0;
-            }
-        }
-
-        #imageInput {
-            display: none;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 25px;
-            background-color: #3498db;
-            color: white;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s;
-            border: none;
-            font-size: 16px;
-        }
-
-        .btn:hover {
-            background-color: #2980b9;
-            transform: scale(1.05);
-        }
-
-        #uploadNewButton {
-            display: none;
-            margin: 20px auto;
-        }
-
-        #loading {
-            text-align: center;
-            display: none;
-            color: #3498db;
-            font-weight: bold;
-            margin-top: 20px;
-        }
-
-        #result {
-            background-color: #fff;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            margin-top: 30px;
-            display: none;
-        }
-
-        #translate {
-            display: flex;
-            justify-content: center;
-        }
-
-        #share {
-            margin-top: 30px;
-            display: flex;
-            justify-content: center;
-        }
-
-        footer {
-            display: flex;
-            justify-content: center;
-            margin-top: 40px;
-        }
-
-        body > .skiptranslate {
-            display: none !important;
-        }
-
-        body {
-            top: 0 !important;
-        }
-
-        .spinner-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .result-item {
-            margin-bottom: 10px;
-        }
-
-        .result-item strong {
-            display: block;
-            margin-bottom: 5px;
-            color: #2c3e50;
-        }
-
+          body {
+              font-family: 'Roboto', sans-serif;
+              line-height: 1.6;
+              color: #333;
+              max-width: 800px;
+              margin: 0 auto;
+              padding: 20px;
+              background-color: #f4f4f4;
+          }
+  
+          h1 {
+              text-align: center;
+              color: #2c3e50;
+          }
+  
+          h2 {
+              text-align: center;
+              color: #2c3e50;
+          }
+  
+          .live-stream-link {
+              text-align: center;
+              margin-bottom: 20px;
+          }
+  
+          .live-stream-link a {
+              color: #e74c3c;
+              text-decoration: none;
+              font-weight: bold;
+          }
+  
+          .live-stream-link a:hover {
+              text-decoration: underline;
+          }
+  
+          .upload-container {
+              background-color: #fff;
+              border-radius: 8px;
+              padding: 20px;
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+              margin-bottom: 20px;
+          }
+  
+          #dragDropArea {
+              border: 2px dashed #3498db;
+              border-radius: 8px;
+              padding: 40px;
+              text-align: center;
+              cursor: pointer;
+              transition: background-color 0.3s;
+              margin-bottom: 20px;
+          }
+  
+          #dragDropArea.dragover {
+              background-color: #ecf0f1;
+          }
+  
+          #imagePreview {
+              max-width: 100%;
+              max-height: 300px;
+              margin: 20px auto;
+              display: none;
+              border-radius: 4px;
+          }
+  
+          #imageInput {
+              display: none;
+          }
+  
+          .btn {
+              display: inline-block;
+              padding: 10px 20px;
+              background-color: #3498db;
+              color: white;
+              border-radius: 4px;
+              cursor: pointer;
+              transition: background-color 0.3s;
+              border: none;
+              font-size: 16px;
+          }
+  
+          .btn:hover {
+              background-color: #2980b9;
+          }
+  
+          #uploadNewButton {
+              display: none;
+              margin: 10px auto;
+          }
+  
+          #loading {
+              text-align: center;
+              display: none;
+              color: #3498db;
+              font-weight: bold;
+          }
+  
+          #result {
+              background-color: #fff;
+              border-radius: 8px;
+              padding: 20px;
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+              margin-top: 20px;
+              display: none;
+          }
+  
+          #translate {
+              display: flex;
+              justify-content: center;
+          }
+  
+          #share {
+              margin-top: 20px;
+              display: flex;
+              justify-content: center;
+          }
+  
+          footer {
+              display: flex;
+              justify-content: center;
+          }
+  
+          body>.skiptranslate {
+              display: none !important;
+          }
+  
+          body {
+              top: 0 !important;
+          }
+  
+          .spinner-container {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+          }
+  
+          .spinner {
+              width: 50px;
+              height: 50px;
+              border: 3px solid rgba(0, 0, 0, .3);
+              border-radius: 50%;
+              border-top-color: #3498db;
+              animation: spin 1s ease-in-out infinite;
+              -webkit-animation: spin 1s ease-in-out infinite;
+              margin-bottom: 10px;
+          }
+  
+          @keyframes spin {
+              to {
+                  -webkit-transform: rotate(360deg);
+              }
+          }
+  
+          @-webkit-keyframes spin {
+              to {
+                  -webkit-transform: rotate(360deg);
+              }
+          }
+  
+          .result-item {
+              margin-bottom: 10px;
+          }
+  
+          .result-item strong {
+              display: block;
+              margin-bottom: 5px;
+          }
       </style>
   </head>
   
   <body>
-    <header>
-        <h1>AI Insta Persona</h1>
-        <h2>Your Face, Your Story</h2>
-        <div class="live-stream-link">
-            <a href="https://gpt2hub.com/" target="_blank" rel="noopener noreferrer">
-                AI SW Engineer Gpt2Hub made this.
-            </a>
-        </div>
-    </header>
-    <main>
-        <div id="translate"></div>
-        <div class="upload-container">
-            <div id="dragDropArea">
-                <p>Drag and drop an image here, or click to select a file</p>
-                <button class="btn" id="selectImageButton">Choose an Image</button>
-            </div>
-            <input type="file" id="imageInput" accept="image/jpeg,image/png,image/heic" required>
-            <div id="imagePreviewContainer">
-                <img id="imagePreview" alt="Image Preview" src="">
-                <div id="scanningBar"></div>
-            </div>
-            <button id="uploadNewButton" class="btn" type="button">Reset</button>
-        </div>
-        <div id="loading">
-            <div class="spinner-container">
-                <div class="spinner"></div>
-                <div>Analyzing...</div>
-            </div>
-        </div>
-        <div id="result"></div>
-        <div id="share">
-            <!-- AddToAny BEGIN -->
-            <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
-                <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
-                <a class="a2a_button_facebook"></a>
-                <a class="a2a_button_linkedin"></a>
-                <a class="a2a_button_whatsapp"></a>
-                <a class="a2a_button_sms"></a>
-                <a class="a2a_button_pinterest"></a>
-                <a class="a2a_button_reddit"></a>
-                <a class="a2a_button_copy_link"></a>
-                <a class="a2a_button_facebook_messenger"></a>
-                <a class="a2a_button_threads"></a>
-            </div>
-            <script async src="https://static.addtoany.com/menu/page.js"></script>
-            <!-- AddToAny END -->
-        </div>
-    </main>
-    <footer>
-        <p>&copy; 2024 Gpt2Hub. All rights reserved.</p>
-    </footer>
+      <header>
+          <h1>AI Insta Persona | Your Face, Your Story</h1>
+          <h2>How do I look?</h2>
+          <div class="live-stream-link">
+              <a href="https://gpt2hub.com/" target="_blank" rel="noopener noreferrer">
+                  AI SW Engneer Gpt2Hub made this.
+              </a>
+          </div>
+      </header>
+      <main>
+          <div id="translate"></div>
+          <div class="upload-container">
+              <div id="dragDropArea">
+                  <p>Drag and drop an image here, or click to select a file</p>
+                  <button class="btn" id="selectImageButton">Choose an Image</button>
+              </div>
+              <input type="file" id="imageInput" accept="image/jpeg,image/png,image/heic" required>
+              <img id="imagePreview" alt="Image Preview" src="">
+              <button id="uploadNewButton" class="btn" type="button">Reset</button>
+          </div>
+          <div id="loading">
+              <div class="spinner-container">
+                  <div class="spinner"></div>
+                  <div>Analyzing...</div>
+              </div>
+          </div>
+          <div id="result"></div>
+          <div id="share">
+              <!-- AddToAny BEGIN -->
+              <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+                  <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+                  <a class="a2a_button_facebook"></a>
+                  <a class="a2a_button_linkedin"></a>
+                  <a class="a2a_button_whatsapp"></a>
+                  <a class="a2a_button_sms"></a>
+                  <a class="a2a_button_pinterest"></a>
+                  <a class="a2a_button_reddit"></a>
+                  <a class="a2a_button_copy_link"></a>
+                  <a class="a2a_button_facebook_messenger"></a>
+                  <a class="a2a_button_threads"></a>
+              </div>
+              <script async src="https://static.addtoany.com/menu/page.js"></script>
+              <!-- AddToAny END -->
+          </div>
+      </main>
+      <footer>
+          <p>&copy; 2024 Gpt2Hub. All rights reserved.</p>
+      </footer>
       <script>
           function onLoadTranslate() {
               new google.translate.TranslateElement(
@@ -289,7 +265,7 @@
           import { initializeAppCheck, ReCaptchaV3Provider, getToken } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app-check.js";
   
           const firebaseConfig = {
-            apiKey: "YOUR_CONFIG_API_KEY",
+            apiKey: "YOUR API KEY",
             authDomain: "snapself-3c339.firebaseapp.com",
             projectId: "snapself-3c339",
             storageBucket: "snapself-3c339.appspot.com",
@@ -306,14 +282,14 @@
               isTokenAutoRefreshEnabled: true
           });
   
+          const imageInput = document.getElementById('imageInput');
           const imagePreview = document.getElementById('imagePreview');
-          const imagePreviewContainer = document.getElementById('imagePreviewContainer');
-          const scanningBar = document.getElementById('scanningBar');
           const uploadNewButton = document.getElementById('uploadNewButton');
           const resultDiv = document.getElementById('result');
           const loadingDiv = document.getElementById('loading');
           const dragDropArea = document.getElementById('dragDropArea');
           const selectImageButton = document.getElementById('selectImageButton');
+  
           async function convertHeicToJpeg(file) {
               try {
                   const convertedBlob = await heic2any({
@@ -328,6 +304,7 @@
                   throw error;
               }
           }
+  
           async function analyzeImage(file) {
               let imageFile = file;
               if (file.type === 'image/heic') {
@@ -337,22 +314,22 @@
                       return;
                   }
               }
-
+  
               if (!imageFile || !(imageFile.type === 'image/jpeg' || imageFile.type === 'image/png')) {
                   alert('Please select a valid image file.');
                   return;
               }
-
+  
               resultDiv.style.display = 'none';
               loadingDiv.style.display = 'block';
-              scanningBar.style.display = 'block'; // Show scanning bar
               uploadNewButton.style.display = 'none';
-
+  
               const formData = new FormData();
               formData.append('image', imageFile);
-
+  
               try {
                   const appCheckToken = await getToken(appCheck, false);
+                  
                   const response = await fetch('https://analyzeimage-nirlz2hexq-uc.a.run.app', {
                       method: 'POST',
                       body: formData,
@@ -366,7 +343,7 @@
                       throw new Error('Network response was not ok: ' + response.statusText);
                   }
                   const data = await response.json();
-
+  
                   resultDiv.innerHTML = `
                       <h3>Analysis Result:</h3>
                       <p><strong>Score:</strong> ${data.score}</p>
@@ -376,97 +353,90 @@
                       <div class="result-item"><strong>Suitable Partner:</strong> ${data.reason.suitable_partner || 'N/A'}</div>
                       <div class="result-item"><strong>MBTI:</strong> ${data.reason.MBTI || 'N/A'}</div>
                   `;
-
+  
               } catch (error) {
                   console.error('Error:', error);
                   resultDiv.innerHTML = 'An error occurred while analyzing the image: ' + error.message;
               } finally {
                   loadingDiv.style.display = 'none';
-                  scanningBar.style.display = 'none'; // Hide scanning bar
                   resultDiv.style.display = 'block';
                   uploadNewButton.style.display = 'block';
               }
           }
-
-          function handleFiles(files) {
+  
+          async function handleFiles(files) {
               if (files.length > 0) {
                   let file = files[0];
                   if (file.type === 'image/heic') {
                       try {
-                          convertHeicToJpeg(file).then((jpegFile) => {
-                              file = jpegFile;
-                              processImage(file);
-                          });
+                          file = await convertHeicToJpeg(file);
                       } catch (error) {
                           return;
                       }
+                  }
+  
+                  if (file.type === 'image/jpeg' || file.type === 'image/png') {
+                      const reader = new FileReader();
+                      reader.onload = function (e) {
+                          imagePreview.src = e.target.result;
+                          imagePreview.style.display = 'block';
+                          dragDropArea.style.display = 'none';
+                          analyzeImage(file);
+                      }
+                      reader.readAsDataURL(file);
                   } else {
-                      processImage(file);
+                      alert('Please select an image file');
                   }
               }
           }
-
-          function processImage(file) {
-              if (file.type === 'image/jpeg' || file.type === 'image/png') {
-                  const reader = new FileReader();
-                  reader.onload = function (e) {
-                      imagePreview.src = e.target.result;
-                      imagePreviewContainer.style.display = 'block';
-                      analyzeImage(file);
-                  }
-                  reader.readAsDataURL(file);
-              } else {
-                  alert('Please select an image file');
-              }
-          }
-
+  
           imageInput.addEventListener('change', function (event) {
               handleFiles(this.files);
           });
-
+  
           dragDropArea.addEventListener('dragover', function (e) {
               e.preventDefault();
               e.stopPropagation();
               this.classList.add('dragover');
           });
-
+  
           dragDropArea.addEventListener('dragleave', function (e) {
               e.preventDefault();
               e.stopPropagation();
               this.classList.remove('dragover');
           });
-
+  
           dragDropArea.addEventListener('drop', function (e) {
+              e.preventDefault();
+              e.stopPropagation();
+              this.classList.remove('dragover');
               handleFiles(e.dataTransfer.files);
           });
-
+  
           selectImageButton.addEventListener('click', function () {
               imageInput.click();
           });
-
+  
           imageInput.addEventListener('click', function (e) {
-              e.stopPropagation();
+              e.stopPropagation(); // 이벤트 전파 중단
           });
-
+  
           uploadNewButton.addEventListener('click', function () {
-              imagePreviewContainer.style.display = 'none';
+              imagePreview.style.display = 'none';
               dragDropArea.style.display = 'block';
               uploadNewButton.style.display = 'none';
               imageInput.value = '';
               resultDiv.style.display = 'none';
           });
-
+  
           document.addEventListener('submit', function (event) {
               event.preventDefault();
           });
-
+  
           window.addEventListener('beforeunload', function (e) {
-              e.preventDefault();
-              e.returnValue = '';
-          });e.preventDefault();
-              e.stopPropagation();
-              this.classList.remove('dragover');
-
+              e.preventDefault(); // 표준에 따라 preventDefault 호출
+              e.returnValue = ''; // Chrome에서는 사용자 지정 메시지를 무시하므로 빈 문자열 사용
+          });
       </script>
   </body>
   
